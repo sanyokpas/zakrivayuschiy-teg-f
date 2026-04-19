@@ -17,7 +17,6 @@
   background-image: var(--background-gradient);
   background-size: cover;
   background-attachment: fixed;
-  background-blend-mode: overlay;
 }
 
 .header {
@@ -70,9 +69,9 @@
 }
 
 .card__title {
-  font-weight: var(--fontweight-title);
+  font-variation-settings: "wght" 715;
   font-size: 18px;
-  max-inline-size: 248px;
+  max-inline-size: 304px;
   margin: 4px 10px;
 }
 
@@ -86,9 +85,8 @@
 }
 
 .card__text {
-  font-weight: var(--fontweight-text);
+  font-variation-settings: "wght" 410;
   line-height: 21px;
-  word-spacing: 
 }
 
 .card__image {
@@ -124,7 +122,6 @@
 
 @supports((text-stroke: 1px var(--text-stroke-color)) or (-webkit-text-stroke: 1px var(--text-stroke-color))) {
   .card__image-label {
-    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke: 1px var(--text-stroke-color);
     text-shadow: none;
   }
@@ -134,19 +131,22 @@
   display: flex;
   flex-direction: row;
   justify-content: end;
-  margin: 0px 25px 25px 0px;
+  margin: 0px 23px 25px 0px;
+  gap: 7px;
 }
 
 .card__like-button {
   inline-size: 130px;
   block-size: 38px;
-  font-family: var(--accent-font);
-  font-weight: 400;
-  transition: box-shadow 0.3s ease;
 }
 
 .button {
   position: relative;
+  transition: box-shadow 0.3s ease;
+  font-family: var(--accent-font);
+  font-weight: 400;
+  cursor: pointer;
+  background-color: var(--main-color);
 }
 
 .button::before {
@@ -164,14 +164,13 @@
   height: 100%;
 }
 
-.button:hover {
-  cursor: pointer;
+.button::before:hover {
   background-color: var(--main-color);
 }
 
 .button:hover::before {
   transform: scaleX(1);
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 .button:focus-visible {
@@ -187,6 +186,8 @@
   background-color: transparent;
   border: none;
   transition: box-shadow 0.3s ease;
+  block-size: 36px;
+  padding: 0;
 }
 
 .sparks {
@@ -238,7 +239,7 @@
 
 .like-icon.is-liked .main-body {
   fill: var(--heart-main-color);
-  transition-delay: 0s;
+  transition-delay: 0.05s;
 }
 
 .like-icon.is-liked .contour {
@@ -266,18 +267,15 @@
 
 .span {
   position: relative;
-  z-index: 1;
-}
-
-.button:hover span{
-  color: var(--main-color);
+  z-index: 2;
   mix-blend-mode: difference;
-  z-index: 1;
+  color: var(--main-color);
 }
 
 .button__text {
   font-family: var(--accent-font);
   font-weight: 400;
+  margin: 2px 0px;
 }
 
 .footer {
@@ -302,8 +300,9 @@
 }
 
 .footer__button-text {
-  max-block-size: 14px;
   max-inline-size: 266px;
+  font-weight: 400;
+  line-height: 90%;
 }
 
 use.disceta-icon {
@@ -315,10 +314,7 @@ use.disceta-icon {
   width: 28px;
   position: relative;
   z-index: 1;
-}
-
-.button:hover .disceta-icon{
-  mix-blend-mode: difference;
+  mix-blend-mode: difference; 
   color: var(--main-color);
 }
 
@@ -329,15 +325,11 @@ use.disceta-icon {
   justify-content: center;
   align-items: center;
   width: clamp(341px, (100vw - 375px) * (12 / 1065) + 341px, 353px);
-  height: 191px;
-  padding: 26px 36px;
+  padding: 26px 26px;
 }
 
 .footer__dialog::backdrop {
   background-color: rgba(0 0 0 / 0.75);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .footer__dialog-button {
@@ -345,6 +337,11 @@ use.disceta-icon {
   block-size: 38px;
   font-family: var(--accent-font);
   font-weight: 400;
+  padding: 0;
+}
+
+.footer__dialog-button-span {
+  text-transform: uppercase;
 }
 
 .footer__dialog-label {
@@ -364,31 +361,31 @@ use.disceta-icon {
   align-items: center;
 }
 
-.stress {
+.grayscale {
   filter: grayscale(50%);
 }
 
-.winner {
+.brightness {
   filter: brightness(0.8);
 }
 
-.thinking {
+.sepia {
   filter: sepia(30%);
 }
 
-.students {
+.hue-rotate {
   filter: hue-rotate(90deg)
 }
 
-.struggle {
+.invert {
   filter: invert(100%);
 }
 
-.ways {
+.saturate {
   filter: saturate(200%);
 }
 
-.ladder {
+.blur {
   filter: blur(2px);
 }
 
@@ -399,10 +396,6 @@ use.disceta-icon {
 
   .card__text-container {
     align-items: start;
-  }
-
-  .header__title {
-    letter-spacing: 6px;
   }
 
   .footer__button {
