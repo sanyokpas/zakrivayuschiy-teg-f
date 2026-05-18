@@ -288,9 +288,6 @@
   inline-size: clamp(306px, 25vw, 335px);
   block-size: clamp(84px, 6vw, 55px);
   margin: 46px 0px 100px 0px;
-  font-family: var(--accent-font);
-  font-weight: 400;
-  font-size: 14px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -335,8 +332,6 @@ use.disceta-icon {
 .footer__dialog-button {
   inline-size: clamp(261px, 249.73px + 3.0047vw, 293px);
   block-size: 38px;
-  font-family: var(--accent-font);
-  font-weight: 400;
   padding: 0;
 }
 
